@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     public Transform target;
     GameObject detectedPlayer;
-
+    public int curHealth = 100;
     void Awake()
     {
         detectedPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -18,5 +18,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
+    }
+    public void DealDamage(int damage)
+    {
+
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool rotateToMainCamera = false;
-    public Transform weapon;
+    public Weapon currentWeapon;
 
     public float moveSpeed = 5f;
     public float jumpHeight = 10f;
@@ -37,6 +37,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButton("Fire1"))
+        {
+            currentWeapon.Attack();
+        }
         float inputH = Input.GetAxis("Horizontal") * moveSpeed;
         float inputV = Input.GetAxis("Vertical") * moveSpeed;
         Vector3 moveDir = new Vector3(inputH, 0f, inputV);
@@ -63,7 +67,7 @@ public class Player : MonoBehaviour
         //}
         Quaternion playerRotation = Quaternion.AngleAxis(camEuler.y, Vector3.up);
         Quaternion weaponRotation = Quaternion.AngleAxis(camEuler.x, Vector3.right);
-        weapon.localRotation = weaponRotation;
+        currentWeapon.transform.localRotation = weaponRotation;
         transform.rotation = playerRotation;
     }
 }
