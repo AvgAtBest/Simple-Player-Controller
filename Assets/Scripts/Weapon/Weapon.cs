@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+namespace SimplePlayerController
 {
-    public int damage;
-    public float accuracy;
-    public float range;
-    public float rateOfFire;
-    public GameObject projectile;
-    protected int currentAmmo;
-    public Transform spawnPoint;
-    public int ammo;
-    
-    public abstract void Attack();
-
-    public void Reload()
+    public abstract class Weapon : MonoBehaviour
     {
-        currentAmmo = ammo;
+        public int damage = 100;
+        public float accuracy = 1f;
+        public float range;
+        public float rateOfFire = 5f;
+        public GameObject projectile;
+        protected int currentAmmo = 0;
+        public Transform spawnPoint;
+        public int ammo = 30;
+
+        public abstract void Attack();
+
+        public virtual void Reload()
+        {
+            currentAmmo = ammo;
+        }
     }
 }

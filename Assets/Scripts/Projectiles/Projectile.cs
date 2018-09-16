@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+namespace SimplePlayerController
 {
-    public int damage = 100;
-    public float range = 50f;
-    public float speed;
-    public Rigidbody rigidBody;
-    public GameObject spawnPoint;
-    public GameObject impact;
-
-
-    public virtual void Fire(Vector3 direction)
+    public abstract class Projectile : MonoBehaviour
     {
-        rigidBody.AddForce(direction * speed, ForceMode.Impulse);
-    }
-    public virtual void OnCollisionEnter(Collision collision)
-    {
+        public int damage = 100;
+        public float range = 50f;
+        public float speed = 10f;
+        public Rigidbody rigidBody;
+        public GameObject spawnPoint;
+        public GameObject projectile;
+        public float fallOff;
 
+        public virtual void Fire(Vector3 direction)
+        {
+            rigidBody.AddForce(direction * speed, ForceMode.Impulse);
+        }
+        public virtual void OnCollisionEnter(Collision collision)
+        {
+
+        }
     }
 }

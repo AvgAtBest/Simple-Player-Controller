@@ -1,16 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimplePlayerController;
 
-public class Normal : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class Normal : Projectile
+{
+    public override void Fire(Vector3 direction)
+    {
+        base.Fire(direction);
+    }
 }

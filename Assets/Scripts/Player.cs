@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimplePlayerController;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Player : MonoBehaviour
     public LayerMask ignoreLayers;
 
     private bool isGrounded = false;
+    public void Start()
+    {
+        rigid = GetComponent<Rigidbody>();
+    }
     private void OnDrawGizmos()
     {
         Ray groundRay = new Ray(transform.position, Vector3.down);
@@ -37,7 +42,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetMouseButtonDown(0))
         {
             currentWeapon.Attack();
         }

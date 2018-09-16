@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimplePlayerController;
 
 public class Shotgun : Weapon
 {
@@ -24,5 +25,21 @@ public class Shotgun : Weapon
             //sends the new bullet forward upon firing
             newBullet.Fire(direction + spread);
         } 
+    }
+    public override void Reload()
+    {
+        {
+            float timer = 4f;
+            while (currentAmmo < ammo)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    currentAmmo += 1;
+                    timer = 4f;
+                }
+            }
+
+        }
     }
 }
