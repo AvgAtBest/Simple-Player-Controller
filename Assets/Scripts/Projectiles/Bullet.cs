@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimplePlayerController;
 
-public class Bullet : MonoBehaviour
+public class Bullet : Projectile
 {
 
-    public int damage = 50;
-    public float speed = 5f;
-    public Rigidbody rigid;
-    public Enemy enemy;
     // Use this for initialization
-    public void Fire(Vector3 direction)
+
+    public override void Fire(Vector3 direction)
     {
-        rigid.AddForce(direction * speed, ForceMode.Impulse);
+        base.Fire(direction);
     }
 
     // Update is called once per frame

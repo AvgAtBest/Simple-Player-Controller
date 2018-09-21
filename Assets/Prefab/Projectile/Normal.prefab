@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 33821963266509612}
   - component: {fileID: 23017528379679180}
   - component: {fileID: 135861651850069008}
+  - component: {fileID: 54754445151567230}
+  - component: {fileID: 114930569931944456}
   m_Layer: 0
   m_Name: Normal
   m_TagString: Untagged
@@ -115,6 +117,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634413788132954}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54754445151567230
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634413788132954}
+  serializedVersion: 2
+  m_Mass: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114930569931944456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634413788132954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813c7e635688f5f4ea46ad628f145762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  range: 50
+  speed: 10
+  rigidBody: {fileID: 54754445151567230}
+  spawnPoint: {fileID: 0}
+  rigid: {fileID: 0}
 --- !u!135 &135861651850069008
 SphereCollider:
   m_ObjectHideFlags: 1

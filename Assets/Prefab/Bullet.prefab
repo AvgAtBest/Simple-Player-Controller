@@ -113,9 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  speed: 5
-  rigid: {fileID: 54836392149648092}
-  enemy: {fileID: 0}
+  range: 50
+  speed: 10
+  rigidBody: {fileID: 54836392149648092}
+  spawnPoint: {fileID: 0}
 --- !u!135 &135713889985627462
 SphereCollider:
   m_ObjectHideFlags: 1
